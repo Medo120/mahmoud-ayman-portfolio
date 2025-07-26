@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Mahmoud Ayman is a skilled Front End Developer experienced in HTML, CSS, and JavaScript. Focused on creating fast, accessible, and pixel-perfect websites."/>
+    <title>Mahmoud Ayman - Front End Developer</title>
+    <link  href="images/Portfolio icon.png" type="image/png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 2em;
+      color: #555;
+    }
+
+    .logo span {
+      color: #7d2ae8;
+    }
+
+    .navigation a {
+      font-size: 1.1em;
+      color: #555;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: .3s;
+    }
+
+    .navigation a:hover {
+      color: #7d2ae8;
+    }
+
+    .btn-talk {
+      background: #7d2ae8;
+      color: #fff;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-talk:hover {
+      background: transparent;
+      color: #7d2ae8;
+      border: 2px solid #7d2ae8;
+    }
+
+    .home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 80px 100px;
+      /* background: linear-gradient(to right, #eee, #fff); */
+      background: #ffffff00;
+    }
+
+    .content {
+      max-width: 600px;
+    }
+
+    .content h2 {
+      font-size: 2.9em;
+    }
+
+    .content h2 span {
+      color: #7d2ae8;
+    }
+
+    .content h4 {
+      font-size: 1.8em;
+      margin: 10px 0;
+    }
+
+    .content p {
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      background: #7d2ae8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-right: 20px;
+      transition: 0.3s;
+    }
+
+    .btn-group a:hover {
+      background: transparent;
+      border: 2px solid #7d2ae8;
+      color: #7d2ae8;
+    }
+
+    .social-icons {
+      margin-top: 30px;
+    }
+
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        border-radius: 50%;
+        text-decoration: none;
+        color: #fff;
+        background: #7d2ae8;
+        font-size: 18px;
+        transition: 0.3s ease;
+}
+
+    section.details {
+      padding: 80px 100px;
+      background: #fff;
+    }
+
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #7d2ae8;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .info-box {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .info-box h3 {
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .bar span {
+      display: block;
+      background: #7d2ae8;
+      height: 12px;
+    }
+
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5em;
+      color: #7d2ae8;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }  
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+        40% {transform: translateY(-10px);}
+        60% {transform: translateY(-5px);}
+    }
+
+    header.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);  
+  border-radius: 10px;
+  backdrop-filter: blur(3px); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7d2ae8, #9e56ff); 
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a1cb1, #8032f2);
+}
+
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95em;
+    color: #555;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+footer span {
+    color: #7d2ae8;
+    font-weight: 600;
+}
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #7d2ae8;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7d2ae8;
+  box-shadow: 0 0 5px rgba(125, 42, 232, 0.3);
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #7d2ae8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #5b1fb8;
+}
+.btn-download {
+  background-color: #7d2ae8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  background: transparent;
+  border: 2px solid #7d2ae8;
+  color: #7d2ae8;
+}
+.contact-intro-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.contact-intro {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.contact-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-box {
+  background: #fff;
+  padding: 20px;
+  width: 230px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+}
+
+.contact-box i {
+  font-size: 28px;
+  color: #7d2ae8;
+  margin-bottom: 10px;
+}
+
+.contact-box h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-box p {
+  font-size: 12.5px;
+  color: #555;
+  /* word-break: break-word; */
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h2 class="logo"><span>Mahmoud</span> Ayman</h2>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#Work Experience">Work Experience</a>
+      <a href="#">Education</a>
+      <a href="#">Skills</a>
+      <a href="#">Languages</a>
+      <a href="#">Hobbies</a>
+      <a href="#">Contact Me</a>
+    </nav>
+    <a href="#" class="btn-talk">Let's Talk</a>
+  </header>
+
+  <section class="home">
+    <div class="content fade-in">
+      <h2>Hi, I'm <span>Mahmoud Ayman</span></h2>
+      <h4>Frontend Developer</h4>
+      <p>Aspiring Front End Developer currently studying Management Information Systems at MTI University. Passionate about building responsive and modern web projects using HTML, CSS, and JavaScript. Actively learning frameworks like React and Vue.js through personal projects and online courses.
+      </p>
+      <div class="btn-group">
+        <a href="#">Hire Me</a>
+        <a href="#">See Projects</a>
+        <a target="_blank" href="CV PDF/CV.pdf" download class="btn-download">Download CV</a>
+
+
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+        <a target="_blank" href="https://github.com/Medo120"><i class="fab fa-github"></i></a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <h2 class="section-title fade-in">Work Experience</h2>
+    <div class="grid-2">
+      <div class="info-box fade-in">
+        <h3>Junior Front End Developer</h3>
+        <ul>
+          <li>Completed 10+ responsive web projects using HTML and CSS, including landing pages, personal portfolios, and basic multi-section layouts.</li>
+          <li>Applied layout techniques using Flexbox and Grid, focusing on clean design.</li>
+          <li>Used JavaScript mainly for creating simple animations and enhancing user interactions; currently learning core JavaScript concepts step by step.</li>
+        </ul>
+      </div>
+    </div>
+ 
+    <h2 class="section-title fade-in" style="margin-top:60px;">Education</h2>
+    <div class="grid-2">
+      <div class="info-box fade-in">
+        <h3>MTI University</h3>
+        <ul>
+          <li>Specialized in Management Information Systems.</li>
+          <li>Excellent academic record.</li>
+          <li>Expected graduation: 2026</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Skills</h2>
+    <div class="info-box fade-in">
+      <p>HTML</p>
+      <div class="bar"><span style="width: 100%"></span></div>
+      <p>CSS</p>
+      <div class="bar"><span style="width: 100%"></span></div>
+      <p>JavaScript</p>
+      <div class="bar"><span style="width: 20%"></span></div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Languages</h2>
+    <div class="info-box fade-in">
+     <p>Arabic</p>
+      <div class="bar"><span style="width: 100%"></span></div>
+      <p>English</p>
+      <div class="bar"><span style="width: 60%"></span></div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Hobbies</h2>
+    <div class="info-box fade-in">
+      <ul>
+      <li>Playing Football</li>
+      <li>Making Jokes</li>
+      <li>Reading Story Books</li>
+      <li>Watching Movies</li>
+      <li>Cooking</li>
+      </ul>
+    </div>
+    </section>
+    <section id="contact" class="contact-section fade-in">
+  <h2 class="fade-in">Contact Me</h2>
+
+  <form class="contact-form fade-in">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="fade-in contact-intro-section">
+    <p class="contact-intro">Let's Talk Together</p>
+
+    <div class="contact-boxes">
+  <div class="contact-box">
+    <i class="fas fa-envelope"></i>
+    <h4>Email</h4>
+    <p>mahmoud.taha9186@gmail.com</p>
+  </div>
+  <div class="contact-box">
+    <i class="fas fa-phone"></i>
+    <h4>Phone</h4>
+    <p>+20 1020743092</p>
+  </div>
+  <div class="contact-box">
+    <i class="fas fa-map-marker-alt"></i>
+    <h4>Address</h4>
+    <p>Cairo, Egypt</p>
+  </div>
+</div>
+
+</section>
+
+
+    <footer>
+        <p>© 2025 <span>Mahmoud Ayman</span>. All rights reserved.</p>
+    </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.3,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
